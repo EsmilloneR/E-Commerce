@@ -34,8 +34,6 @@ class UserResource extends Resource
 
                 DateTimePicker::make('email_verified_at')->label('Email Verified At')->default(now()),
                 TextInput::make('password')->dehydrated(fn($state) => filled($state))->password()->required(fn(Page $livewire): bool => $livewire instanceof CreateRecord),
-
-
             ]);
     }
 
