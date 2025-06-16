@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['product_id', 'brand_id', 'name', 'slug', 'images', 'description', 'price', 'is_active', 'is_featured', 'in_stock', 'on_sale'];
+    protected $fillable = ['category_id', 'brand_id', 'name', 'slug', 'images', 'description', 'price', 'is_active', 'is_featured', 'in_stock', 'on_sale'];
 
     public function brand()
     {
@@ -25,7 +25,7 @@ class Product extends Model
         return $this->hasMany(OrderItem::class);
     }
 
-    protected $cast = [
+    protected $casts = [
         'images' => 'array'
     ];
 }

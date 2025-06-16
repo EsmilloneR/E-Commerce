@@ -41,7 +41,7 @@ class BrandResource extends Resource
                         TextInput::make('slug')->maxLength(255)->required()->unique(Brand::class, 'slug', ignoreRecord: true)->disabled()->dehydrated(),
                     ]),
 
-                    FileUpload::make('image')->directory('categories'),
+                    FileUpload::make('image')->directory('brands'),
 
                     Toggle::make('is_active')->required()->default(true),
 
