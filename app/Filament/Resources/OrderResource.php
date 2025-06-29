@@ -33,7 +33,7 @@ use Illuminate\Support\Number;
 class OrderResource extends Resource
 {
     protected static ?string $model = Order::class;
-
+    protected static ?int $navigationSort = 5;
     protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
     public static function form(Form $form): Form
@@ -173,7 +173,7 @@ class OrderResource extends Resource
 
     public static function getNavigationBadgeColor(): string|array|null
     {
-        return static::getModel()::count() > 10 ? 'danger' : 'success';
+        return static::getModel()::count() > 10 ? 'success' : 'danger';
     }
     public static function getPages(): array
     {
