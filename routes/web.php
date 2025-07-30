@@ -1,25 +1,42 @@
 <?php
 
+use App\Livewire\Auth\ForgotPasswordPage;
+use App\Livewire\Auth\LoginPage;
+use App\Livewire\Auth\RegisterPage;
+use App\Livewire\Auth\ResetPasswordPage;
+use App\Livewire\CancelPage;
+use App\Livewire\CartPage;
+use App\Livewire\CategoriesPage;
+use App\Livewire\CheckoutPage;
+use App\Livewire\HomePage;
+use App\Livewire\MyOrdersDetailPage;
+use App\Livewire\MyOrdersPage;
+use App\Livewire\ProductDetailPage;
+use App\Livewire\ProductsPage;
 use App\Livewire\Settings\Appearance;
 use App\Livewire\Settings\Password;
 use App\Livewire\Settings\Profile;
+use App\Livewire\SuccessPage;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', HomePage::class);
+Route::get('/categories', CategoriesPage::class);
+Route::get('/products', ProductsPage::class);
+Route::get('/products/{product}', ProductDetailPage::class);
+Route::get('/cart', CartPage::class);
+Route::get('/checkout', CheckoutPage::class);
+Route::get('/my-orders', MyOrdersPage::class);
+Route::get('/my-orders/{order}', MyOrdersDetailPage::class);
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
 
-Route::middleware(['auth'])->group(function () {
-    Route::redirect('settings', 'settings/profile');
+Route::get('/login', LoginPage::class);
+Route::get('/register', RegisterPage::class);
+Route::get('/forgot', ForgotPasswordPage::class);
+Route::get('/reset', ResetPasswordPage::class);
 
-    Route::get('settings/profile', Profile::class)->name('settings.profile');
-    Route::get('settings/password', Password::class)->name('settings.password');
-    Route::get('settings/appearance', Appearance::class)->name('settings.appearance');
-});
+
+Route::get('/success', SuccessPage::class);
+Route::get('/cancel', CancelPage::class);
 
 
 require __DIR__ . '/auth.php';
