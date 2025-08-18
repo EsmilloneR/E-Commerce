@@ -4,7 +4,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             <div class="col-span-full lg:col-span-1">
                 <a class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#" aria-label="Brand">DCodeMania</a>
+                    href="#" aria-label="Brand" wire:navigate>DCodeMania</a>
             </div>
             <!-- End Col -->
 
@@ -13,11 +13,11 @@
 
                 <div class="mt-3 grid space-y-3">
                     <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="/categories">Categories</a></p>
+                            href="/categories" wire:navigate>Categories</a></p>
                     <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="/products">All Products</a></p>
+                            href="/products" wire:navigate>All Products</a></p>
                     <p><a class="inline-flex gap-x-2 text-gray-400 hover:text-gray-200 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                            href="/products">Featured Products</a></p>
+                            href="/products" wire:navigate>Featured Products</a></p>
                 </div>
             </div>
             <!-- End Col -->
