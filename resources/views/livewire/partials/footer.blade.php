@@ -4,7 +4,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
             <div class="col-span-full lg:col-span-1">
                 <a class="flex-none text-xl font-semibold text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-                    href="#" aria-label="Brand" wire:navigate>DCodeMania</a>
+                    href="#" aria-label="Brand" wire:navigate>PaperCountryInn</a>
             </div>
             <!-- End Col -->
 
